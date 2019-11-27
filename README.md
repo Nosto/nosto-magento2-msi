@@ -12,6 +12,7 @@ composer require --no-update nosto/module-nosto-msi && composer update --no-dev
 
 Enable the extension with:
 ```bash
+bin/magento module:enable Nosto_Msi
 bin/magento setup:upgrade
 bin/magento setup:di:compile
 bin/magento cache:clean
