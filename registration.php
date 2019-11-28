@@ -34,7 +34,6 @@
  *
  */
 
-use Dotenv\Dotenv;
 use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Nosto_Msi', __DIR__);

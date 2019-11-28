@@ -1,4 +1,4 @@
-<?php /** @noinspection PhpUnused */
+<?php
 
 /**
  * Copyright (c) 2019, Nosto Solutions Ltd
@@ -41,6 +41,7 @@ use Magento\Catalog\Model\Product;
 use Magento\Inventory\Model\ResourceModel\SourceItem\CollectionFactory as InventorySourceItemCollectionFactory;
 use Magento\InventoryApi\Api\Data\SourceInterface;
 use Magento\InventoryApi\Api\Data\SourceItemInterface;
+use Magento\InventoryApi\Api\Data\StockInterface;
 use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
 use Magento\InventorySalesApi\Api\GetProductSalableQtyInterface;
 use Magento\InventorySalesApi\Api\IsProductSalableInterface;
@@ -93,7 +94,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
     /**
      * @inheritDoc
      */
-    public function isInStock(Product $product, Website $website)
+    public function isInStock(Product $product, Website $website): bool
     {
         return $this->isProductSalable->execute(
             $product->getSku(),
@@ -104,7 +105,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
     /**
      * @inheritDoc
      */
-    public function getQuantitiesByIds(array $productIds, Website $website)
+    public function getQuantitiesByIds(array $productIds, Website $website): array
     {
         $products = $this->productCollectionFactory->create()
             ->addIdsToFilter($productIds);
@@ -123,6 +124,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
         $inventoryItems = $this->inventorySourceItemCollectionFactory->create()
             ->addFieldToFilter(SourceItemInterface::SKU, $skuStrings)
             ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings);
+        /** @var SourceItemInterface $inventoryItem */
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $skuStrings, true);
             if ($productId !== false) {
@@ -132,7 +134,6 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
                 $quantities[$productId] += $inventoryItem->getQuantity();
             }
         }
-
         return $quantities;
     }
 
@@ -146,14 +147,14 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
             return $this->salableQty->execute($product->getSku(), $stock->getStockId());
         } catch (\Exception $e) {
             $this->logger->exception($e);
-            return null;
+            return 0;
         }
     }
 
     /**
      * @inheritDoc
      */
-    public function getStockByWebsite(Website $website)
+    public function getStockByWebsite(Website $website): StockInterface
     {
         return $this->stockByWebsiteIdResolver->execute($website->getId());
     }
