@@ -40,6 +40,7 @@ namespace Nosto\Msi\Model\Service\Stock\Provider;
 use Magento\Catalog\Model\Product;
 use Magento\Inventory\Model\ResourceModel\SourceItem\CollectionFactory as InventorySourceItemCollectionFactory;
 use Magento\InventoryApi\Api\Data\SourceInterface;
+use Magento\InventoryApi\Api\Data\SourceItemInterface;
 use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
 use Magento\InventorySalesApi\Api\GetProductSalableQtyInterface;
 use Magento\InventorySalesApi\Api\IsProductSalableInterface;
@@ -105,8 +106,6 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
      */
     public function getQuantitiesByIds(array $productIds, Website $website)
     {
-        // TODO: refactor to do a single lookup
-        // TODO: check if something is cached already
         $products = $this->productCollectionFactory->create()
             ->addIdsToFilter($productIds);
         $skuStrings = [];
@@ -121,10 +120,9 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
         foreach ($inventorySources as $inventorySource) {
             $sourceStrings[] = $inventorySource->getSourceCode();
         }
-        //TODO: check if the fields can be found in constants
         $inventoryItems = $this->inventorySourceItemCollectionFactory->create()
-            ->addFieldToFilter('sku', $skuStrings)
-            ->addFieldToFilter('source_code', $sourceStrings);
+            ->addFieldToFilter(SourceItemInterface::SKU, $skuStrings)
+            ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings);
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $skuStrings, true);
             if ($productId !== false) {
@@ -143,10 +141,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
      */
     public function getAvailableQuantity(Product $product, Website $website)
     {
-        // ToDo: Need check here if it's manageable - if not we need to loop
-        // -
         $stock = $this->getStockByWebsite($website);
-
         try {
             return $this->salableQty->execute($product->getSku(), $stock->getStockId());
         } catch (\Exception $e) {
