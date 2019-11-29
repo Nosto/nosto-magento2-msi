@@ -35,51 +35,33 @@
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Provider;
+namespace Nosto\Msi\Model\Service\Stock\Source;
 
-use Magento\Store\Model\Website;
-use Nosto\Tagging\Model\Service\Stock\Provider\CachingStockProvider;
+use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
 
-class CachingMsiStockProvider extends CachingStockProvider implements MsiStockProviderInterface
+class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
 {
     /** @var array */
-    private $stockSources = [];
+    private $cachedStockSources = [];
 
-    /** @var array */
-    private $stocks = [];
-
-    /** @var MsiStockProviderInterface */
-    private $stockProvider;
+    /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
+    private $stockSources;
 
     public function __construct(
-        MsiStockProviderInterface $stockProvider,
-        $maxCacheSize
+        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
     ) {
-        parent::__construct($stockProvider, $maxCacheSize);
-        $this->stockProvider = $stockProvider;
+        $this->stockSources = $stockSources;
     }
 
     /**
      * @inheritDoc
      */
-    public function getStockByWebsite(Website $website)
+    public function execute(int $stockId): array
     {
-        if (isset($this->stocks[$website->getId()])) {
-            return $this->stocks[$website->getId()];
+        if (isset($this->cachedStockSources[$stockId])) {
+            return $this->cachedStockSources[$stockId];
         }
-        $this->stocks[$website->getId()] = $this->stockProvider->getStockByWebsite($website);
-        return $this->stocks[$website->getId()];
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function getStockSourcesByWebsite(Website $website)
-    {
-        if (isset($this->stockSources[$website->getId()])) {
-            return $this->stockSources[$website->getId()];
-        }
-        $this->stockSources[$website->getId()] = $this->getStockSourcesByWebsite($website);
-        return $this->stockSources[$website->getId()];
+        $this->cachedStockSources[$stockId] = $this->stockSources->execute($stockId);
+        return $this->cachedStockSources[$stockId];
     }
 }

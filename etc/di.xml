@@ -35,19 +35,20 @@
   -->
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Nosto\Msi\Model\Service\Stock\Provider\MsiStockProviderInterface" type="Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider"/>
-    <type name="Nosto\Msi\Model\Service\Stock\Provider\CachingMsiStockProvider">
+    <type name="Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider">
+        <arguments>
+            <argument name="stocksResolver" xsi:type="object">
+                Nosto\Msi\Model\Service\Stock\Source\CachingStocksService
+            </argument>
+            <argument name="stockSourcesResolver" xsi:type="object">
+                Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService
+            </argument>
+        </arguments>
+    </type>
+    <type name="Nosto\Tagging\Model\Service\Stock\Provider\CachingStockProvider">
         <arguments>
             <argument name="stockProvider" xsi:type="object">
                 Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider
-            </argument>
-            <argument name="maxCacheSize" xsi:type="number">1000</argument>
-        </arguments>
-    </type>
-    <type name="Nosto\Tagging\Model\Service\Stock\StockService">
-        <arguments>
-            <argument name="stockProvider" xsi:type="object">
-                Nosto\Msi\Model\Service\Stock\Provider\CachingMsiStockProvider
             </argument>
         </arguments>
     </type>

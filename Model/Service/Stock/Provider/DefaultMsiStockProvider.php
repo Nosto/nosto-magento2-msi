@@ -49,14 +49,15 @@ use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 use Magento\Store\Model\Website;
 use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
+use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
-class DefaultMsiStockProvider implements MsiStockProviderInterface
+class DefaultMsiStockProvider implements StockProviderInterface
 {
     /** @var GetProductSalableQtyInterface */
     private $salableQty;
 
     /** @var StockByWebsiteIdResolverInterface */
-    private $stockByWebsiteIdResolver;
+    private $stockResolver;
 
     /** @var InventorySourceItemCollectionFactory */
     private $inventorySourceItemCollectionFactory;
@@ -65,7 +66,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
     private $productCollectionFactory;
 
     /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSources;
+    private $stockSourcesResolver;
 
     /** @var Logger */
     private $logger;
@@ -75,18 +76,18 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
 
     public function __construct(
         GetProductSalableQtyInterface $salableQty,
-        StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver,
+        StockByWebsiteIdResolverInterface $stocksResolver,
         InventorySourceItemCollectionFactory $inventorySourceItemCollectionFactory,
         ProductCollectionFactory $productCollectionFactory,
-        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources,
+        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver,
         IsProductSalableInterface $isProductSalable,
         Logger $logger
     ) {
         $this->salableQty = $salableQty;
-        $this->stockByWebsiteIdResolver = $stockByWebsiteIdResolver;
+        $this->stockResolver = $stocksResolver;
         $this->inventorySourceItemCollectionFactory = $inventorySourceItemCollectionFactory;
         $this->productCollectionFactory = $productCollectionFactory;
-        $this->stockSources = $stockSources;
+        $this->stockSourcesResolver = $stockSourcesResolver;
         $this->isProductSalable = $isProductSalable;
         $this->logger = $logger;
     }
@@ -156,7 +157,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
      */
     public function getStockByWebsite(Website $website): StockInterface
     {
-        return $this->stockByWebsiteIdResolver->execute($website->getId());
+        return $this->stockResolver->execute($website->getId());
     }
 
     /**
@@ -165,7 +166,7 @@ class DefaultMsiStockProvider implements MsiStockProviderInterface
     public function getStockSourcesByWebsite(Website $website)
     {
         try {
-            return $this->stockSources->execute($this->getStockByWebsite($website)->getStockId());
+            return $this->stockSourcesResolver->execute($this->getStockByWebsite($website)->getStockId());
         } catch (\Exception $e) {
             $this->logger->exception($e);
             return null;

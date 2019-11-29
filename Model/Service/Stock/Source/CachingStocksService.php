@@ -35,24 +35,31 @@
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Provider;
+namespace Nosto\Msi\Model\Service\Stock\Source;
 
-use Magento\InventoryApi\Api\Data\SourceInterface;
 use Magento\InventoryApi\Api\Data\StockInterface;
-use Magento\Store\Model\Website;
-use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
+use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 
-interface MsiStockProviderInterface extends StockProviderInterface
+class CachingStocksService implements StockByWebsiteIdResolverInterface
 {
-    /**
-     * @param Website $website
-     * @return StockInterface
-     */
-    public function getStockByWebsite(Website $website);
+    /** @var array */
+    private $stocks = [];
+
+    public function __construct(
+        StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver
+    ) {
+        $this->stockByWebsiteIdResolver = $stockByWebsiteIdResolver;
+    }
 
     /**
-     * @param Website $website
-     * @return SourceInterface[]
+     * @inheritDoc
      */
-    public function getStockSourcesByWebsite(Website $website);
+    public function execute(int $websiteId): StockInterface
+    {
+        if (isset($this->stocks[$websiteId])) {
+            return $this->stocks[$websiteId];
+        }
+        $this->stocks[$websiteId] = $this->stockByWebsiteIdResolver->execute($websiteId);
+        return $this->stocks[$websiteId];
+    }
 }
