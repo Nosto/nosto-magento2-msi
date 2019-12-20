@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Copyright (c) 2019, Nosto Solutions Ltd
  * All rights reserved.
@@ -51,6 +50,9 @@ use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
 use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
+/**
+ * Class DefaultMsiStockProvider
+ */
 class DefaultMsiStockProvider implements StockProviderInterface
 {
     /** @var GetProductSalableQtyInterface */
@@ -74,6 +76,15 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /** @var IsProductSalableInterface */
     private $isProductSalable;
 
+    /**
+     * @param GetProductSalableQtyInterface $salableQty
+     * @param StockByWebsiteIdResolverInterface $stocksResolver
+     * @param InventorySourceItemCollectionFactory $inventorySourceItemCollectionFactory
+     * @param ProductCollectionFactory $productCollectionFactory
+     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver
+     * @param IsProductSalableInterface $isProductSalable
+     * @param Logger $logger
+     */
     public function __construct(
         GetProductSalableQtyInterface $salableQty,
         StockByWebsiteIdResolverInterface $stocksResolver,

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Copyright (c) 2019, Nosto Solutions Ltd
  * All rights reserved.
@@ -39,6 +38,9 @@ namespace Nosto\Msi\Model\Service\Stock\Source;
 
 use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
 
+/**
+ * Class CachingStockSourcesService
+ */
 class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
 {
     /** @var array */
@@ -47,6 +49,10 @@ class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPr
     /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
     private $stockSources;
 
+    /**
+     * CachingStockSourcesService constructor.
+     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
+     */
     public function __construct(
         GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
     ) {

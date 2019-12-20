@@ -37,8 +37,9 @@
 <!--suppress XmlUnboundNsPrefix -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Nosto_Msi" setup_version="0.0.1">
+    <module name="Nosto_Msi" setup_version="1.0.0-rc1">
         <sequence>
+            <module name="Magento_Inventory"/>
             <module name="Nosto_Tagging"/>
         </sequence>
     </module>
