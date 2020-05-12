@@ -50,9 +50,6 @@ use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
 use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
-/**
- * Class DefaultMsiStockProvider
- */
 class DefaultMsiStockProvider implements StockProviderInterface
 {
     /** @var GetProductSalableQtyInterface */
