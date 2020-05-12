@@ -25,6 +25,7 @@
   "require": {
     "nosto/module-nostotagging": "^4.0.5",
     "magento/module-inventory": "1.0.*",
+    "magento/module-inventory-sales-api": "1.0.*",
     "php": ">=7.1.0"
   },
   "repositories": [
