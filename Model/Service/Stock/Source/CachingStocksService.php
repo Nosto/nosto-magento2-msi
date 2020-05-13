@@ -43,6 +43,7 @@ class CachingStocksService implements StockByWebsiteIdResolverInterface
 {
 
     private $stocks = [];
+    private $stockByWebsiteIdResolver;
 
     public function __construct(
         StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver
