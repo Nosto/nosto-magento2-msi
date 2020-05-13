@@ -105,9 +105,13 @@ class DefaultMsiStockProvider implements StockProviderInterface
      */
     public function isInStock(Product $product, Website $website): bool
     {
+        $stockId = $this->getStockByWebsite($website)->getStockId();
+        if (!$stockId) {
+            return false;
+        }
         return $this->isProductSalable->execute(
             $product->getSku(),
-            $this->getStockByWebsite($website)->getStockId()
+            $stockId
         );
     }
 
@@ -152,12 +156,15 @@ class DefaultMsiStockProvider implements StockProviderInterface
     public function getAvailableQuantity(Product $product, Website $website)
     {
         $stock = $this->getStockByWebsite($website);
+        $stockId = $stock->getStockId();
         try {
-            return $this->salableQty->execute($product->getSku(), $stock->getStockId());
+            if ($stockId) {
+                return (int)$this->salableQty->execute($product->getSku(), $stockId);
+            }
         } catch (\Exception $e) {
             $this->logger->exception($e);
-            return 0;
         }
+        return 0;
     }
 
     /**
@@ -173,11 +180,14 @@ class DefaultMsiStockProvider implements StockProviderInterface
      */
     public function getStockSourcesByWebsite(Website $website)
     {
+        $stockId = $this->getStockByWebsite($website)->getStockId();
         try {
-            return $this->stockSourcesResolver->execute($this->getStockByWebsite($website)->getStockId());
+            if ($stockId){
+                return $this->stockSourcesResolver->execute($stockId);
+            }
         } catch (\Exception $e) {
             $this->logger->exception($e);
-            return null;
         }
+        return null;
     }
 }
