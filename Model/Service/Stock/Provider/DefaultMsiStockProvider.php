@@ -182,7 +182,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
     {
         $stockId = $this->getStockByWebsite($website)->getStockId();
         try {
-            if ($stockId){
+            if ($stockId) {
                 return $this->stockSourcesResolver->execute($stockId);
             }
         } catch (\Exception $e) {
