@@ -37,7 +37,9 @@
 namespace Nosto\Msi\Model\Service\Stock\Provider;
 
 use Magento\Catalog\Model\Product;
+use Magento\Inventory\Model\ResourceModel\SourceItem\Collection;
 use Magento\Inventory\Model\ResourceModel\SourceItem\CollectionFactory as InventorySourceItemCollectionFactory;
+use Magento\Inventory\Model\SourceItem;
 use Magento\InventoryApi\Api\Data\SourceInterface;
 use Magento\InventoryApi\Api\Data\SourceItemInterface;
 use Magento\InventoryApi\Api\Data\StockInterface;
@@ -48,6 +50,7 @@ use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 use Magento\Store\Model\Website;
 use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
+use Nosto\Tagging\Model\ResourceModel\Sku as NostoSkuResource;
 use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
 class DefaultMsiStockProvider implements StockProviderInterface
@@ -73,6 +76,9 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /** @var IsProductSalableInterface */
     private $isProductSalable;
 
+    /** @var NostoSkuResource */
+    private $skuResource;
+
     /**
      * @param GetProductSalableQtyInterface $salableQty
      * @param StockByWebsiteIdResolverInterface $stocksResolver
@@ -89,6 +95,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         ProductCollectionFactory $productCollectionFactory,
         GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver,
         IsProductSalableInterface $isProductSalable,
+        NostoSkuResource $skuResource,
         Logger $logger
     ) {
         $this->salableQty = $salableQty;
@@ -97,6 +104,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         $this->productCollectionFactory = $productCollectionFactory;
         $this->stockSourcesResolver = $stockSourcesResolver;
         $this->isProductSalable = $isProductSalable;
+        $this->skuResource = $skuResource;
         $this->logger = $logger;
     }
 
@@ -120,23 +128,9 @@ class DefaultMsiStockProvider implements StockProviderInterface
      */
     public function getQuantitiesByIds(array $productIds, Website $website): array
     {
-        $products = $this->productCollectionFactory->create()
-            ->addIdsToFilter($productIds);
-        $skuStrings = [];
-        /* @var Product $item */
-        foreach ($products as $item) {
-            $skuStrings[$item->getId()] = $item->getSku();
-        }
         $quantities = [];
-        $inventorySources = $this->getStockSourcesByWebsite($website);
-        $sourceStrings = [];
-        /* @var SourceInterface $inventorySource */
-        foreach ($inventorySources as $inventorySource) {
-            $sourceStrings[] = $inventorySource->getSourceCode();
-        }
-        $inventoryItems = $this->inventorySourceItemCollectionFactory->create()
-            ->addFieldToFilter(SourceItemInterface::SKU, $skuStrings)
-            ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings);
+        $skuStrings = $this->getProductIdSkuMap($productIds, $website);
+        $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
         /** @var SourceItemInterface $inventoryItem */
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $skuStrings, true);
@@ -150,6 +144,46 @@ class DefaultMsiStockProvider implements StockProviderInterface
         return $quantities;
     }
 
+    /**
+     * @param array $productIds
+     * @param Website $website
+     * @return Collection|SourceItem[]
+     */
+    private function getInventoryItemsByProductIds(array $productIds, Website $website): Collection
+    {
+        $skuStrings = $this->getProductIdSkuMap($productIds, $website);
+        $inventorySources = $this->getStockSourcesByWebsite($website);
+        $sourceStrings = [];
+        /* @var SourceInterface $inventorySource */
+        foreach ($inventorySources as $inventorySource) {
+            $sourceStrings[] = $inventorySource->getSourceCode();
+        }
+        $collection = $this->inventorySourceItemCollectionFactory
+            ->create()
+            ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings);
+
+        if (!empty($skuStrings)) {
+            $collection->addFieldToFilter(SourceItemInterface::SKU, $skuStrings);
+        }
+        return $collection;
+    }
+
+    /**
+     * @param array $productIds
+     * @param Website $website
+     * @return array
+     */
+    private function getProductIdSkuMap(array $productIds, Website $website)
+    {
+        $products = $this->productCollectionFactory->create()
+            ->addIdsToFilter($productIds);
+        $productIdToSkuMap = [];
+        /* @var Product $item */
+        foreach ($products as $item) {
+            $productIdToSkuMap[$item->getId()] = $item->getSku();
+        }
+        return $productIdToSkuMap;
+    }
     /**
      * @inheritDoc
      */
@@ -189,5 +223,21 @@ class DefaultMsiStockProvider implements StockProviderInterface
             $this->logger->exception($e);
         }
         return null;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getInStockProductsByIdsAsArray(array $productIds, Website $website)
+    {
+        $inStockSkus = [];
+        $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
+        foreach ($inventoryItems as $inventoryItem) {
+            $inStockSkus[] = $inventoryItem->getSku();
+        }
+        $products = $this->productCollectionFactory->create()
+            ->addSkuFilter($inStockSkus)
+            ->addWebsiteFilter($website->getId());
+        return $this->skuResource->getSkuPricesByIds($website, array_keys($products->toArray(['entity_id'])));
     }
 }
