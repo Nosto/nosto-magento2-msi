@@ -18,11 +18,8 @@ jobs:
         php-version: '7.2'
         tools: composer, prestissimo, pecl
         coverage: none
+        extensions: ast
 
-    - name: Install AST extension
-      run: sudo pecl install -f ast
-
-      #https://github.com/actions/cache/blob/master/examples.md#php---composer
     - name: Cache composer packages
       id: composer-cache
       run: |
@@ -56,8 +53,6 @@ jobs:
       run: |
         composer create-project magento/community-edition=2.3.2 magento
         cd magento
-        composer config repositories.0 composer https://repo.magento.com
-        composer config http-basic.repo.magento.com "$REPO_USR" "$REPO_PSW"
         composer config minimum-stability dev
         composer config prefer-stable true
         composer require --no-update nosto/module-nosto-msi:dev-${GITHUB_REF#refs/heads/}#${GITHUB_SHA}
