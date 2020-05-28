@@ -125,7 +125,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         $quantities = [];
         $skuStrings = $this->getProductIdSkuMap($productIds, $website);
         $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
-        if ($inventoryItem == null) {
+        if ($inventoryItems == null || empty($skuStrings)) {
             return [];
         }
         /** @var SourceItemInterface $inventoryItem */
