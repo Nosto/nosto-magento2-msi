@@ -50,7 +50,6 @@ use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 use Magento\Store\Model\Website;
 use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
-use Nosto\Tagging\Model\ResourceModel\Sku as NostoSkuResource;
 use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
 class DefaultMsiStockProvider implements StockProviderInterface
