@@ -158,14 +158,10 @@ class DefaultMsiStockProvider implements StockProviderInterface
         foreach ($inventorySources as $inventorySource) {
             $sourceStrings[] = $inventorySource->getSourceCode();
         }
-        $collection = $this->inventorySourceItemCollectionFactory
+        return $this->inventorySourceItemCollectionFactory
             ->create()
-            ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings);
-
-        if (!empty($skuStrings)) {
-            $collection->addFieldToFilter(SourceItemInterface::SKU, $skuStrings);
-        }
-        return $collection;
+            ->addFieldToFilter(SourceItemInterface::SOURCE_CODE, $sourceStrings)
+            ->addFieldToFilter(SourceItemInterface::SKU, $skuStrings);
     }
 
     /**
@@ -240,7 +236,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         $productIdSkuMap = $this->getProductIdSkuMap($productIds, $website);
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $productIdSkuMap);
-            if ($inventoryItem->getStatus() == 1 && $productId) {
+            if ($inventoryItem->getStatus() == SourceItemInterface::STATUS_IN_STOCK && $productId) {
                 $inStockSkus[$productId] = $inventoryItem->getSku();
             }
         }
