@@ -76,9 +76,6 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /** @var IsProductSalableInterface */
     private $isProductSalable;
 
-    /** @var NostoSkuResource */
-    private $skuResource;
-
     /**
      * @param GetProductSalableQtyInterface $salableQty
      * @param StockByWebsiteIdResolverInterface $stocksResolver
@@ -95,7 +92,6 @@ class DefaultMsiStockProvider implements StockProviderInterface
         ProductCollectionFactory $productCollectionFactory,
         GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver,
         IsProductSalableInterface $isProductSalable,
-        NostoSkuResource $skuResource,
         Logger $logger
     ) {
         $this->salableQty = $salableQty;
@@ -104,7 +100,6 @@ class DefaultMsiStockProvider implements StockProviderInterface
         $this->productCollectionFactory = $productCollectionFactory;
         $this->stockSourcesResolver = $stockSourcesResolver;
         $this->isProductSalable = $isProductSalable;
-        $this->skuResource = $skuResource;
         $this->logger = $logger;
     }
 
@@ -131,6 +126,9 @@ class DefaultMsiStockProvider implements StockProviderInterface
         $quantities = [];
         $skuStrings = $this->getProductIdSkuMap($productIds, $website);
         $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
+        if ($inventoryItem == null) {
+            return [];
+        }
         /** @var SourceItemInterface $inventoryItem */
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $skuStrings, true);
@@ -147,11 +145,14 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /**
      * @param array $productIds
      * @param Website $website
-     * @return Collection|SourceItem[]
+     * @return Collection|SourceItem[]|null
      */
-    private function getInventoryItemsByProductIds(array $productIds, Website $website): Collection
+    private function getInventoryItemsByProductIds(array $productIds, Website $website)
     {
         $skuStrings = $this->getProductIdSkuMap($productIds, $website);
+        if (empty($skuStrings)) {
+            return null;
+        }
         $inventorySources = $this->getStockSourcesByWebsite($website);
         $sourceStrings = [];
         /* @var SourceInterface $inventorySource */
@@ -176,7 +177,9 @@ class DefaultMsiStockProvider implements StockProviderInterface
     private function getProductIdSkuMap(array $productIds, Website $website)
     {
         $products = $this->productCollectionFactory->create()
-            ->addIdsToFilter($productIds);
+            ->addIdsToFilter($productIds)
+            ->addWebsiteFilter($website->getId());
+
         $productIdToSkuMap = [];
         /* @var Product $item */
         foreach ($products as $item) {
@@ -228,16 +231,20 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /**
      * @inheritDoc
      */
-    public function getInStockProductsByIdsAsArray(array $productIds, Website $website)
+    public function getInStockSkusByIds(array $productIds, Website $website)
     {
         $inStockSkus = [];
         $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
-        foreach ($inventoryItems as $inventoryItem) {
-            $inStockSkus[] = $inventoryItem->getSku();
+        if ($inventoryItems == null) {
+            return [];
         }
-        $products = $this->productCollectionFactory->create()
-            ->addSkuFilter($inStockSkus)
-            ->addWebsiteFilter($website->getId());
-        return $this->skuResource->getSkuPricesByIds($website, array_keys($products->toArray(['entity_id'])));
+        $productIdSkuMap = $this->getProductIdSkuMap($productIds, $website);
+        foreach ($inventoryItems as $inventoryItem) {
+            $productId = array_search($inventoryItem->getSku(), $productIdSkuMap);
+            if ($inventoryItem->getStatus() == 1 && $productId) {
+                $inStockSkus[$productId] = $inventoryItem->getSku();
+            }
+        }
+        return $inStockSkus;
     }
 }
