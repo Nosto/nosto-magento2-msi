@@ -226,7 +226,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /**
      * @inheritDoc
      */
-    public function getInStockSkusByIds(array $productIds, Website $website)
+    public function getInStockProductIds(array $productIds, Website $website)
     {
         $inStockSkus = [];
         $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
@@ -237,7 +237,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         foreach ($inventoryItems as $inventoryItem) {
             $productId = array_search($inventoryItem->getSku(), $productIdSkuMap);
             if ($inventoryItem->getStatus() == SourceItemInterface::STATUS_IN_STOCK && $productId) {
-                $inStockSkus[$productId] = $inventoryItem->getSku();
+                $inStockSkus[] = $productId;
             }
         }
         return $inStockSkus;
