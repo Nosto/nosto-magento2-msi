@@ -38,21 +38,14 @@ namespace Nosto\Msi\Model\Service\Stock\Source;
 
 use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
 
-/**
- * Class CachingStockSourcesService
- */
 class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
 {
-    /** @var array */
+
     private $cachedStockSources = [];
 
     /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
     private $stockSources;
 
-    /**
-     * CachingStockSourcesService constructor.
-     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-     */
     public function __construct(
         GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
     ) {

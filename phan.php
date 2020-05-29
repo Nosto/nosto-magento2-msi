@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2019, Nosto Solutions Ltd
+ * Copyright (c) 2020, Nosto Solutions Ltd
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -29,37 +29,44 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * @author Nosto Solutions Ltd <contact@nosto.com>
- * @copyright 2019 Nosto Solutions Ltd
+ * @copyright 2020 Nosto Solutions Ltd
  * @license http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Source;
-
-use Magento\InventoryApi\Api\Data\StockInterface;
-use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
-
-class CachingStocksService implements StockByWebsiteIdResolverInterface
-{
-
-    private $stocks = [];
-    private $stockByWebsiteIdResolver;
-
-    public function __construct(
-        StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver
-    ) {
-        $this->stockByWebsiteIdResolver = $stockByWebsiteIdResolver;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function execute(int $websiteId): StockInterface
-    {
-        if (isset($this->stocks[$websiteId])) {
-            return $this->stocks[$websiteId];
-        }
-        $this->stocks[$websiteId] = $this->stockByWebsiteIdResolver->execute($websiteId);
-        return $this->stocks[$websiteId];
-    }
-}
+return [
+    'backward_compatibility_checks' => false,
+    'signature-compatibility' => true,
+    'progress-bar' => true,
+    'simplify_ast' => false,
+    'dead_code_detection' => false,
+    'exclude_file_regex' => '@^vendor/.*/(tests|test|Tests|Test)/@',
+    'directory_list' => [
+        'Model',
+        'vendor/nosto',
+        'vendor/vlucas',
+        'vendor/phpseclib',
+        'vendor/magento',
+        'vendor/monolog',
+        'vendor/psr',
+        'vendor/symfony/console',
+        'magento/generated'
+    ],
+    'exclude_file_list' => [
+        'vendor/magento/zendframework1/library/Zend/Validate/Hostname/Biz.php',
+        'vendor/magento/zendframework1/library/Zend/Validate/Hostname/Cn.php',
+        'vendor/magento/zendframework1/library/Zend/Validate/Hostname/Com.php',
+        'vendor/magento/zendframework1/library/Zend/Validate/Hostname/Jp.php',
+    ],
+    'exclude_analysis_directory_list' => [
+        'vendor/',
+        'magento'
+    ],
+    'suppress_issue_types' => [
+        'PhanParamSignatureMismatch',
+    ],
+    "color_issue_messages_if_supported" => true,
+    'plugins' => [
+      'vendor/drenso/phan-extensions/Plugin/DocComment/InlineVarPlugin.php'
+    ]
+];
