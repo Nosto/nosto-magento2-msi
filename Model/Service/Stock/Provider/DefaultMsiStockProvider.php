@@ -199,18 +199,12 @@ class DefaultMsiStockProvider implements StockProviderInterface
         return 0;
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getStockByWebsite(Website $website): StockInterface
+	public function getStockByWebsite(Website $website): StockInterface
     {
         return $this->stockResolver->execute($website->getId());
     }
 
-    /**
-     * @inheritDoc
-     */
-    public function getStockSourcesByWebsite(Website $website)
+	public function getStockSourcesByWebsite(Website $website)
     {
         $stockId = $this->getStockByWebsite($website)->getStockId();
         try {
