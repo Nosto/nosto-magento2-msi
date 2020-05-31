@@ -182,6 +182,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
         }
         return $productIdToSkuMap;
     }
+
     /**
      * @inheritDoc
      */
@@ -199,12 +200,12 @@ class DefaultMsiStockProvider implements StockProviderInterface
         return 0;
     }
 
-	public function getStockByWebsite(Website $website): StockInterface
+    public function getStockByWebsite(Website $website): StockInterface
     {
         return $this->stockResolver->execute($website->getId());
     }
 
-	public function getStockSourcesByWebsite(Website $website)
+    public function getStockSourcesByWebsite(Website $website)
     {
         $stockId = $this->getStockByWebsite($website)->getStockId();
         try {
