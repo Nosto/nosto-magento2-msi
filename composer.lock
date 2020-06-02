@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a9c8ce6ba1c6446c8f0911c24d85f6c",
+    "content-hash": "8bb5990464a2ad9f57e4733fc464d09b",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -4592,46 +4592,50 @@
         },
         {
             "name": "nosto/module-nostotagging",
-            "version": "dev-hotfix/4.0.9",
+            "version": "dev-release/5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-magento2.git",
-                "reference": "fb138a337b2ec0ca569620b306b2ccbdecb451e1"
+                "reference": "f30ebc044069f6cc9aad50aa0fe3f21a422c5c16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/fb138a337b2ec0ca569620b306b2ccbdecb451e1",
-                "reference": "fb138a337b2ec0ca569620b306b2ccbdecb451e1",
+                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/f30ebc044069f6cc9aad50aa0fe3f21a422c5c16",
+                "reference": "f30ebc044069f6cc9aad50aa0fe3f21a422c5c16",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "magento/framework": ">=101.0.6|~102.0",
-                "nosto/php-sdk": "^4.0.5",
+                "nosto/php-sdk": "5.0.*",
                 "php": ">=7.0.0"
             },
             "require-dev": {
-                "magento-ecg/coding-standard": "2.*",
-                "magento/marketplace-eqp": "1.*",
-                "magento/module-bundle": "100.2.0",
-                "magento/module-catalog": "*",
-                "magento/module-catalog-search": "100.2.0",
-                "magento/module-configurable-product": "100.2.0",
-                "magento/module-directory": "100.2.0",
-                "magento/module-quote": "101.0.0",
-                "magento/module-review": "100.2.0",
-                "magento/module-sales": "101.0.0",
-                "magento/module-sales-inventory": "100.2.0",
-                "magento/module-sales-rule": "101.0.0",
-                "magento/module-search": "100.2.0",
-                "magento/module-store": "100.2.0",
-                "magento/zendframework1": "*",
-                "phan/phan": "0.8.8",
+                "drenso/phan-extensions": "^2.5",
+                "magento-ecg/coding-standard": "3.*",
+                "magento/magento-coding-standard": "^5.0",
+                "magento/module-asynchronous-operations": "^100.3",
+                "magento/module-bundle": "100.3.4",
+                "magento/module-catalog": "103.0.4",
+                "magento/module-catalog-search": "101.0.4",
+                "magento/module-configurable-product": "100.3.4",
+                "magento/module-directory": "100.3.4",
+                "magento/module-grouped-product": "100.3.4",
+                "magento/module-quote": "101.1.4",
+                "magento/module-review": "100.3.4",
+                "magento/module-sales": "102.0.4",
+                "magento/module-sales-inventory": "100.3.4",
+                "magento/module-sales-rule": "101.1.4",
+                "magento/module-search": "101.0.4",
+                "magento/module-store": "101.0.4",
+                "magento/zendframework1": "1.14.3",
+                "mridang/pmd-annotations": "^0.0.2",
+                "phan/phan": "2.6",
                 "phing/phing": "2.*",
                 "php": ">=7.1.0",
-                "phpdocumentor/reflection-docblock": "3.0.0",
                 "phpmd/phpmd": "^2.5",
-                "sebastian/phpcpd": "*"
+                "sebastian/phpcpd": "*",
+                "staabm/annotate-pull-request-from-checkstyle": "^1.1"
             },
             "suggest": {
                 "ext-code": "*",
@@ -4653,20 +4657,20 @@
                 "OSL-3.0"
             ],
             "description": "Increase your conversion rate and average order value by delivering your customers personalized product recommendations throughout their shopping journey.",
-            "time": "2020-05-28T11:45:15+00:00"
+            "time": "2020-05-29T13:31:14+00:00"
         },
         {
             "name": "nosto/php-sdk",
-            "version": "4.1.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-php-sdk.git",
-                "reference": "38301b4940a603661c5373beaf67ee60e95a2621"
+                "reference": "a376d8fa477878322e86e12b1bfdcc1fdce1dcf1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nosto/nosto-php-sdk/zipball/38301b4940a603661c5373beaf67ee60e95a2621",
-                "reference": "38301b4940a603661c5373beaf67ee60e95a2621",
+                "url": "https://api.github.com/repos/Nosto/nosto-php-sdk/zipball/a376d8fa477878322e86e12b1bfdcc1fdce1dcf1",
+                "reference": "a376d8fa477878322e86e12b1bfdcc1fdce1dcf1",
                 "shasum": ""
             },
             "require": {
@@ -4705,7 +4709,7 @@
                 "BSD-3-Clause"
             ],
             "description": "PHP SDK for developing Nosto modules for e-commerce platforms",
-            "time": "2020-05-12T07:19:58+00:00"
+            "time": "2020-05-26T11:04:11+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -4768,12 +4772,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "ceaffa8fa9fcd34d5c91c8053f113a4ad07cdd12"
+                "reference": "51f2a9386b320b203369957305b71e000a96dde8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/ceaffa8fa9fcd34d5c91c8053f113a4ad07cdd12",
-                "reference": "ceaffa8fa9fcd34d5c91c8053f113a4ad07cdd12",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/51f2a9386b320b203369957305b71e000a96dde8",
+                "reference": "51f2a9386b320b203369957305b71e000a96dde8",
                 "shasum": ""
             },
             "require": {
@@ -4852,7 +4856,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2020-05-11T04:52:20+00:00"
+            "time": "2020-05-31T17:22:35+00:00"
         },
         {
             "name": "psr/container",
@@ -5139,12 +5143,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "6b456a744a1f92cc016fba7e6b1f4056e4953661"
+                "reference": "326b064d804043005526f5a0494cfb49edb59bb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/6b456a744a1f92cc016fba7e6b1f4056e4953661",
-                "reference": "6b456a744a1f92cc016fba7e6b1f4056e4953661",
+                "url": "https://api.github.com/repos/symfony/console/zipball/326b064d804043005526f5a0494cfb49edb59bb0",
+                "reference": "326b064d804043005526f5a0494cfb49edb59bb0",
                 "shasum": ""
             },
             "require": {
@@ -5208,7 +5212,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-24T08:33:35+00:00"
+            "time": "2020-05-30T20:06:45+00:00"
         },
         {
             "name": "symfony/filesystem",
@@ -5216,12 +5220,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "2072269a880763bd871d8c681252824895308fa2"
+                "reference": "e7550993849f986f01a9161b302d4aed8d4aab0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/2072269a880763bd871d8c681252824895308fa2",
-                "reference": "2072269a880763bd871d8c681252824895308fa2",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/e7550993849f986f01a9161b302d4aed8d4aab0a",
+                "reference": "e7550993849f986f01a9161b302d4aed8d4aab0a",
                 "shasum": ""
             },
             "require": {
@@ -5258,7 +5262,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-20T17:44:07+00:00"
+            "time": "2020-05-30T20:38:10+00:00"
         },
         {
             "name": "symfony/finder",
@@ -5669,12 +5673,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "3bc410c407cba1ef8a03ca46de69a08c8b04f54a"
+                "reference": "c714958428a85c86ab97e3a0c96db4c4f381b7f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/3bc410c407cba1ef8a03ca46de69a08c8b04f54a",
-                "reference": "3bc410c407cba1ef8a03ca46de69a08c8b04f54a",
+                "url": "https://api.github.com/repos/symfony/process/zipball/c714958428a85c86ab97e3a0c96db4c4f381b7f5",
+                "reference": "c714958428a85c86ab97e3a0c96db4c4f381b7f5",
                 "shasum": ""
             },
             "require": {
@@ -5710,7 +5714,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-23T19:47:49+00:00"
+            "time": "2020-05-30T20:06:45+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -8777,12 +8781,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "b71076cb9b03f5fc8472995843a718c8ad9a4eeb"
+                "reference": "e632b1e3833de625a5c00d81f8e0044893543375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/b71076cb9b03f5fc8472995843a718c8ad9a4eeb",
-                "reference": "b71076cb9b03f5fc8472995843a718c8ad9a4eeb",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/e632b1e3833de625a5c00d81f8e0044893543375",
+                "reference": "e632b1e3833de625a5c00d81f8e0044893543375",
                 "shasum": ""
             },
             "require": {
@@ -8844,7 +8848,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2020-05-24T22:00:42+00:00"
+            "time": "2020-05-30T20:38:10+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
