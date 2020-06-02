@@ -226,7 +226,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
     /**
      * @inheritDoc
      */
-    public function getInStockSkusByIds(array $productIds, Website $website)
+    public function getInStockProductIds(array $productIds, Website $website)
     {
         $inStockSkus = [];
         $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
