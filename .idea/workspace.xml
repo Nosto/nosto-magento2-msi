@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d73f093-876d-4cd9-a73d-d1d04236fba2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Model/Service/Stock/Provider/DefaultMsiStockProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Service/Stock/Provider/DefaultMsiStockProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Service/Stock/Source/CachingStockSourcesService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Service/Stock/Source/CachingStockSourcesService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/Service/Stock/Source/CachingStocksService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Service/Stock/Source/CachingStocksService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phan.php" beforeDir="false" afterPath="$PROJECT_DIR$/phan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +27,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="NamedScopeManager">
-    <scope name="Inspection" pattern="!file[nosto-magento2-msi]:vendor//*&amp;&amp;!file[nosto-magento2-msi]:.github//*&amp;&amp;!file[nosto-magento2-msi]:magento//*" />
+    <order>
+      <scope name="Inspection" />
+    </order>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -254,7 +250,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2275" />
     <property name="run.code.analysis.last.selected.profile" value="pCI" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.PHP" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -308,7 +304,10 @@
       <workItem from="1590831879438" duration="8549000" />
       <workItem from="1590855312436" duration="4728000" />
       <workItem from="1590923759290" duration="89000" />
-      <workItem from="1590925095140" duration="128000" />
+      <workItem from="1590925095140" duration="1329000" />
+      <workItem from="1590937782376" duration="639000" />
+      <workItem from="1590938445881" duration="570000" />
+      <workItem from="1590988100748" duration="683000" />
     </task>
     <servers />
   </component>
@@ -337,10 +336,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="349" y="156" width="783" height="587" key="NewModule_or_Project.wizard/0.0.1440.900@0.0.1440.900" timestamp="1590846871640" />
-    <state x="229" y="89" width="917" height="722" key="SettingsEditor" timestamp="1590925125139">
+    <state x="229" y="89" width="917" height="722" key="SettingsEditor" timestamp="1591088516269">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="229" y="89" width="917" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1590925125139" />
+    <state x="229" y="89" width="917" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1591088516269" />
     <state x="229" y="110" width="917" height="722" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1590871861062" />
     <state x="0" y="258" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1590872045353">
       <screen x="0" y="23" width="1440" height="877" />
