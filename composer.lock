@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bb5990464a2ad9f57e4733fc464d09b",
+    "content-hash": "4785c9029299a6e1507e8916adaa6ed8",
     "packages": [
         {
             "name": "colinmollenhour/credis",
@@ -145,12 +145,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "f7abfc9d7fb8437f1dee87f00c037d13279a6d16"
+                "reference": "81c6fe987b955f525704b3097853c86a661a026b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/f7abfc9d7fb8437f1dee87f00c037d13279a6d16",
-                "reference": "f7abfc9d7fb8437f1dee87f00c037d13279a6d16",
+                "url": "https://api.github.com/repos/composer/composer/zipball/81c6fe987b955f525704b3097853c86a661a026b",
+                "reference": "81c6fe987b955f525704b3097853c86a661a026b",
                 "shasum": ""
             },
             "require": {
@@ -169,12 +169,11 @@
                 "symfony/process": "^2.7 || ^3.0 || ^4.0 || ^5.0"
             },
             "conflict": {
-                "symfony/console": "2.8.38",
-                "symfony/phpunit-bridge": "3.4.40"
+                "symfony/console": "2.8.38"
             },
             "require-dev": {
                 "phpspec/prophecy": "^1.10",
-                "symfony/phpunit-bridge": "^3.4"
+                "symfony/phpunit-bridge": "^4.2"
             },
             "suggest": {
                 "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
@@ -218,7 +217,7 @@
                 "dependency",
                 "package"
             ],
-            "time": "2020-05-27T20:07:55+00:00"
+            "time": "2020-06-03T08:26:56+00:00"
         },
         {
             "name": "composer/semver",
@@ -343,16 +342,16 @@
         },
         {
             "name": "composer/xdebug-handler",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/xdebug-handler.git",
-                "reference": "1ab9842d69e64fb3a01be6b656501032d1b78cb7"
+                "reference": "fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/1ab9842d69e64fb3a01be6b656501032d1b78cb7",
-                "reference": "1ab9842d69e64fb3a01be6b656501032d1b78cb7",
+                "url": "https://api.github.com/repos/composer/xdebug-handler/zipball/fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
+                "reference": "fa2aaf99e2087f013a14f7432c1cd2dd7d8f1f51",
                 "shasum": ""
             },
             "require": {
@@ -383,7 +382,7 @@
                 "Xdebug",
                 "performance"
             ],
-            "time": "2020-03-01T12:26:26+00:00"
+            "time": "2020-06-04T11:16:35+00:00"
         },
         {
             "name": "container-interop/container-interop",
@@ -4592,16 +4591,16 @@
         },
         {
             "name": "nosto/module-nostotagging",
-            "version": "dev-release/5.0.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-magento2.git",
-                "reference": "f30ebc044069f6cc9aad50aa0fe3f21a422c5c16"
+                "reference": "58cc9fbc8346afebf84cacda0a6b3f7e9da76626"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/f30ebc044069f6cc9aad50aa0fe3f21a422c5c16",
-                "reference": "f30ebc044069f6cc9aad50aa0fe3f21a422c5c16",
+                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/58cc9fbc8346afebf84cacda0a6b3f7e9da76626",
+                "reference": "58cc9fbc8346afebf84cacda0a6b3f7e9da76626",
                 "shasum": ""
             },
             "require": {
@@ -4657,7 +4656,7 @@
                 "OSL-3.0"
             ],
             "description": "Increase your conversion rate and average order value by delivering your customers personalized product recommendations throughout their shopping journey.",
-            "time": "2020-05-29T13:31:14+00:00"
+            "time": "2020-06-03T12:15:31+00:00"
         },
         {
             "name": "nosto/php-sdk",
@@ -7949,12 +7948,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pdepend/pdepend.git",
-                "reference": "1aa2302c2185357f026e91c0fb9cf48af5bec39e"
+                "reference": "fe8265391c42c1e5a570256d019a19e7cefe3df1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/1aa2302c2185357f026e91c0fb9cf48af5bec39e",
-                "reference": "1aa2302c2185357f026e91c0fb9cf48af5bec39e",
+                "url": "https://api.github.com/repos/pdepend/pdepend/zipball/fe8265391c42c1e5a570256d019a19e7cefe3df1",
+                "reference": "fe8265391c42c1e5a570256d019a19e7cefe3df1",
                 "shasum": ""
             },
             "require": {
@@ -7988,7 +7987,7 @@
                 "BSD-3-Clause"
             ],
             "description": "Official version of pdepend to be handled with Composer",
-            "time": "2020-05-25T12:19:20+00:00"
+            "time": "2020-06-03T20:35:30+00:00"
         },
         {
             "name": "phan/phan",
@@ -9039,9 +9038,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "nosto/module-nostotagging": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

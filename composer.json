@@ -24,7 +24,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "nosto/module-nostotagging": "dev-release/5.0.0",
+    "nosto/module-nostotagging": "^5.0.0",
     "magento/module-inventory": "^1.0.0",
     "magento/module-inventory-sales-api": "^1.0.0",
     "php": ">=7.1.0"
