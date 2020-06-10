@@ -1,7 +1,8 @@
 All notable changes to this project will be documented in this file. This project adheres to Semantic Versioning.
 
-### not released
-* Make the implementation of DefaultMsiStockProvider compatible with StockProviderInterface introduced in [base module 5.0.0](https://github.com/Nosto/nosto-magento2) 
+### 2.0.0
+* Make the implementation of DefaultMsiStockProvider compatible with StockProviderInterface introduced in [base module 5.0.0](https://github.com/Nosto/nosto-magento2/releases/tag/5.0.0) 
+* Update the dependencies to be compatible with the [base module 5.0.0](https://github.com/Nosto/nosto-magento2/releases/tag/5.0.0)
 
 ### 1.0.1
 * Fix issue with configurable product prices being zero in Nosto product data when not using the default stock
