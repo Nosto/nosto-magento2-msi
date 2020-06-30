@@ -1,29 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d73f093-876d-4cd9-a73d-d1d04236fba2" name="Default Changelist" comment="">
+    <list default="true" id="1e0c490d-f970-43b4-990d-0b2601a9b671" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/scopes/Inspection.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/scopes/Inspection.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nosto-magento2-msi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nosto-magento2-msi.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
-    <execution>
-      <executable path="composer" />
-    </execution>
+    <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="improvement/add-github-workflow" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="NamedScopeManager">
@@ -229,129 +221,24 @@
       <path value="$PROJECT_DIR$/vendor/zendframework/zend-form" />
     </include_path>
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
-  </component>
-  <component name="ProjectId" id="1ccdNVBNgZPmB6NhtU0OXwhWwxQ" />
-  <component name="ProjectViewState">
-    <option name="autoscrollFromSource" value="true" />
-    <option name="autoscrollToSource" value="true" />
-    <option name="showMembers" value="true" />
-  </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2275" />
     <property name="run.code.analysis.last.selected.profile" value="pCI" />
     <property name="settings.editor.selected.configurable" value="project.scopes" />
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="3d73f093-876d-4cd9-a73d-d1d04236fba2" name="Default Changelist" comment="" />
-      <created>1590831775178</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1590831775178</updated>
-      <workItem from="1590831879438" duration="8549000" />
-      <workItem from="1590855312436" duration="4728000" />
-      <workItem from="1590923759290" duration="89000" />
-      <workItem from="1590925095140" duration="1329000" />
-      <workItem from="1590937782376" duration="639000" />
-      <workItem from="1590938445881" duration="570000" />
-      <workItem from="1590988100748" duration="1880000" />
-    </task>
     <servers />
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="354" y="135" key="#Inspections" timestamp="1590923836180">
+    <state x="473" y="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593505074617">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="354" y="135" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1590923836180" />
-    <state x="208" y="31" key="#Project_Structure" timestamp="1590846793341">
+    <state x="473" y="314" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1593505074617" />
+    <state x="236" y="89" key="SettingsEditor" timestamp="1593504905576">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="208" y="31" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1590846793341" />
-    <state x="468" y="312" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1590923796304">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="468" y="312" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.900@0.0.1440.900" timestamp="1590923796304" />
-    <state x="468" y="327" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.23.1440.877@0.23.1440.877" timestamp="1590871923736" />
-    <state x="553" y="369" key="ComposerInitDialogKey" timestamp="1590832934823">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="553" y="369" key="ComposerInitDialogKey/0.0.1440.900@0.0.1440.900" timestamp="1590832934823" />
-    <state x="349" y="156" width="783" height="587" key="NewModule_or_Project.wizard" timestamp="1590846871640">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="349" y="156" width="783" height="587" key="NewModule_or_Project.wizard/0.0.1440.900@0.0.1440.900" timestamp="1590846871640" />
-    <state x="229" y="89" width="917" height="722" key="SettingsEditor" timestamp="1591088516269">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="229" y="89" width="917" height="722" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1591088516269" />
-    <state x="229" y="110" width="917" height="722" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1590871861062" />
-    <state x="0" y="258" key="com.intellij.javaee.MapExternalResourceDialog" timestamp="1590872045353">
-      <screen x="0" y="23" width="1440" height="877" />
-    </state>
-    <state x="0" y="258" key="com.intellij.javaee.MapExternalResourceDialog/0.23.1440.877@0.23.1440.877" timestamp="1590872045353" />
-    <state x="485" y="191" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog" timestamp="1590832900172">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="485" y="191" key="com.intellij.openapi.vcs.changes.SpecificFilesViewDialog/0.0.1440.900@0.0.1440.900" timestamp="1590832900172" />
-    <state x="420" y="207" width="600" height="486" key="find.popup" timestamp="1590854996764">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="420" y="207" width="600" height="486" key="find.popup/0.0.1440.900@0.0.1440.900" timestamp="1590854996764" />
+    <state x="236" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1593504905576" />
   </component>
 </project>
