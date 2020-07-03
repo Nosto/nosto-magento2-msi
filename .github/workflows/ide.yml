@@ -57,7 +57,7 @@ jobs:
         composer config prefer-stable true
         composer config repositories.0 composer https://repo.magento.com
         composer config http-basic.repo.magento.com "$REPO_USR" "$REPO_PSW"
-        composer require magento/inventory-composer-metapackage --no-update
+        composer require --no-update magento/inventory-composer-metapackage
         composer require --no-update nosto/module-nosto-msi:dev-${GITHUB_REF#refs/heads/}#${GITHUB_SHA}
         composer update --no-dev
         bin/magento module:enable --all
