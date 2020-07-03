@@ -5,7 +5,6 @@
       <root url="jar://$PROJECT_DIR$/vendor/laminas/laminas-loader/test/_files/PharModuleZip.zip!/" />
       <root url="jar://$PROJECT_DIR$/vendor/laminas/laminas-loader/test/_files/PharModuleFake.zip!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>

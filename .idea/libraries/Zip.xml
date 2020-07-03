@@ -8,7 +8,6 @@
       <root url="jar://$PROJECT_DIR$/vendor/composer/composer/tests/Composer/Test/Util/Fixtures/Zip/nojson.zip!/" />
       <root url="jar://$PROJECT_DIR$/vendor/composer/composer/tests/Composer/Test/Util/Fixtures/Zip/folder.zip!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>

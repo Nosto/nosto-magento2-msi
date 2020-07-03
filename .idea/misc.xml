@@ -135,9 +135,41 @@
       <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\UpgradeData" />
       <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\UpgradeSchema" />
       <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Model\Service\Stock\StockService __construct" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Msi\Model\Service\Stock\Source" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Controller\Frontend\Cart" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Model\Service\Stock\StockService" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\CoreData" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Base __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getAvailableQuantity" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getInStockProductIds" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getQuantitiesByIds" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider isInStock" />
     </entry_point>
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" />
+    <pattern value="\Nosto\Tagging\Controller\Frontend\Cart" />
+    <pattern value="\Nosto\Tagging\Model\Service\Stock\StockService" />
+    <pattern value="\Nosto\Tagging\Setup\CoreData" />
+    <pattern value="\Nosto\Tagging\Controller\Export\Base" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" member="execute" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" member="execute" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getAvailableQuantity" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getInStockProductIds" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getQuantitiesByIds" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="isInStock" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
-  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
