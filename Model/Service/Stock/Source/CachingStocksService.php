@@ -39,12 +39,18 @@ namespace Nosto\Msi\Model\Service\Stock\Source;
 use Magento\InventoryApi\Api\Data\StockInterface;
 use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 
+/** @noinspection PhpUnused */
 class CachingStocksService implements StockByWebsiteIdResolverInterface
 {
 
     private $stocks = [];
     private $stockByWebsiteIdResolver;
 
+    /**
+     * CachingStocksService constructor.
+     * @param StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver
+     * @noinspection PhpUnused
+     */
     public function __construct(
         StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver
     ) {
@@ -53,6 +59,7 @@ class CachingStocksService implements StockByWebsiteIdResolverInterface
 
     /**
      * @inheritDoc
+     * @noinspection PhpUnused
      */
     public function execute(int $websiteId): StockInterface
     {
