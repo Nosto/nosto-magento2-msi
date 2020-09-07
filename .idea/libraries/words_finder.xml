@@ -4,6 +4,7 @@
       <root url="jar://$PROJECT_DIR$/magento/dev/tests/static/framework/tests/unit/testsuite/Magento/TestFramework/Inspection/_files/words_finder/buffy.zip!/" />
       <root url="jar://$PROJECT_DIR$/magento/dev/tests/static/framework/tests/unit/testsuite/Magento/TestFramework/Inspection/_files/words_finder/interview_with_the_vampire.zip!/" />
     </CLASSES>
+    <JAVADOC />
     <SOURCES />
   </library>
 </component>

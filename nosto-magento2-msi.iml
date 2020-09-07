@@ -7,20 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.github" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/magento" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-console" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-escaper" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-filter" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-form" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-http" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-inputfilter" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-loader" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-mail" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-mime" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-mvc" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-psr7bridge" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-servicemanager" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-uri" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
