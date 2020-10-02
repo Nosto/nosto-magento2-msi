@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="catalog_product">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/magento/dev/tests/integration/testsuite/Magento/ImportExport/Controller/Adminhtml/Import/_files/catalog_product.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
