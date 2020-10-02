@@ -1,11 +1,11 @@
-name: Phan
+name: PHPStorm
 
 on: [push]
 
 jobs:
 
-  phan:
-    name: Phan Analysis
+  ide:
+    name: IDE Inspection
     runs-on: ubuntu-latest
 
     steps:
@@ -65,23 +65,23 @@ jobs:
         cd ..
         cp -r magento/generated vendor/magento/
         rm -rf magento
+        rm -rf vendor/bin
       env:
         GITHUB_BRANCH: ${{ github.base_ref }}
         REPO_USR: ${{ secrets.REPO_USR }}
         REPO_PSW: ${{ secrets.REPO_PSW }}
 
-    - name: Run Phan analysis
-      id: phan-analysis
-      run: |
-        ./vendor/bin/phan --config-file=phan.php --output-mode=checkstyle --output=chkphan.xml --processes=4
-      continue-on-error: true
+    - name: Run PHPStorm
+      uses: mridang/action-phpstorm@master
+      with:
+        target: .
+        profile: ./.idea/inspectionProfiles/CI.xml
+        output: ./output
+        verbosity: v2
+        scope: Inspection
 
-    - name: Archive static analysis results
+    - name: Archive inspection results
       uses: actions/upload-artifact@v1
       with:
-        name: phan-analysis-results
-        path: chkphan.xml
-
-    - name: Report annotations
-      id: report-annotations
-      run: ./vendor/bin/cs2pr chkphan.xml
+        name: inspection-results
+        path: output

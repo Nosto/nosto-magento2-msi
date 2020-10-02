@@ -35,12 +35,10 @@
   -->
 
 <!--suppress XmlUnboundNsPrefix -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Nosto_Msi" setup_version="2.0.0">
-        <sequence>
-            <module name="Magento_Inventory"/>
-            <module name="Nosto_Tagging"/>
-        </sequence>
-    </module>
-</config>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <referenceBlock name="head.additional">
+        <block class="Nosto\Msi\Block\Meta" name="nosto.msi.meta" after="nosto.meta"
+               template="Nosto_Msi::meta.phtml"/>
+    </referenceBlock>
+</page>

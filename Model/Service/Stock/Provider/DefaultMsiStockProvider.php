@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2019, Nosto Solutions Ltd
+ * Copyright (c) 2020, Nosto Solutions Ltd
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -29,7 +29,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  * @author Nosto Solutions Ltd <contact@nosto.com>
- * @copyright 2019 Nosto Solutions Ltd
+ * @copyright 2020 Nosto Solutions Ltd
  * @license http://opensource.org/licenses/BSD-3-Clause BSD 3-Clause
  *
  */
@@ -52,6 +52,7 @@ use Nosto\Tagging\Logger\Logger;
 use Nosto\Tagging\Model\ResourceModel\Magento\Product\CollectionFactory as ProductCollectionFactory;
 use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 
+/** @noinspection PhpUnused */
 class DefaultMsiStockProvider implements StockProviderInterface
 {
     /** @var GetProductSalableQtyInterface */
@@ -83,6 +84,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
      * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver
      * @param IsProductSalableInterface $isProductSalable
      * @param Logger $logger
+     * @noinspection PhpUnused
      */
     public function __construct(
         GetProductSalableQtyInterface $salableQty,
@@ -104,6 +106,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
 
     /**
      * @inheritDoc
+     * @noinspection PhpUnused
      */
     public function isInStock(Product $product, Website $website): bool
     {
@@ -119,6 +122,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
 
     /**
      * @inheritDoc
+     * @noinspection PhpUnused
      */
     public function getQuantitiesByIds(array $productIds, Website $website): array
     {
@@ -182,8 +186,10 @@ class DefaultMsiStockProvider implements StockProviderInterface
         }
         return $productIdToSkuMap;
     }
+
     /**
      * @inheritDoc
+     * @noinspection PhpUnused
      */
     public function getAvailableQuantity(Product $product, Website $website)
     {
@@ -199,17 +205,11 @@ class DefaultMsiStockProvider implements StockProviderInterface
         return 0;
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getStockByWebsite(Website $website): StockInterface
     {
         return $this->stockResolver->execute($website->getId());
     }
 
-    /**
-     * @inheritDoc
-     */
     public function getStockSourcesByWebsite(Website $website)
     {
         $stockId = $this->getStockByWebsite($website)->getStockId();
@@ -225,6 +225,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
 
     /**
      * @inheritDoc
+     * @noinspection PhpUnused
      */
     public function getInStockProductIds(array $productIds, Website $website)
     {

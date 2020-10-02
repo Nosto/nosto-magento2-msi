@@ -34,40 +34,7 @@
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Source;
-
-use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
-
-/** @noinspection PhpUnused */
-class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
-{
-
-    private $cachedStockSources = [];
-
-    /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSources;
-
-    /**
-     * CachingStockSourcesService constructor.
-     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-     * @noinspection PhpUnused
-     */
-    public function __construct(
-        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-    ) {
-        $this->stockSources = $stockSources;
-    }
-
-    /**
-     * @inheritDoc
-     * @noinspection PhpUnused
-     */
-    public function execute(int $stockId): array
-    {
-        if (isset($this->cachedStockSources[$stockId])) {
-            return $this->cachedStockSources[$stockId];
-        }
-        $this->cachedStockSources[$stockId] = $this->stockSources->execute($stockId);
-        return $this->cachedStockSources[$stockId];
-    }
-}
+/**  @var \Nosto\Msi\Block\Meta $block */
+?>
+<!-- Nosto Msi Meta Tags -->
+<meta name="nosto-msi-version" content="<?= $block->escapeHtml($block->getModuleVersion()); ?>">

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="PhpEntryPointsManager">
+    <entry_point>
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Block" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Addtocart __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Category __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Element __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Knockout __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Meta __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\PageType __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Search __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Stub __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\TaggingTrait __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Variation __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\TaggingTrait _toHtml" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Addtocart" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Category" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Element" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Embed __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Embed" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Order formatNostoDate" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product formatNostoDate" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Order formatNostoPrice" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product formatNostoPrice" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Addtocart getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Category getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Element getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Embed getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Meta getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Order getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\PageType getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Search getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Stub getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Variation getAbstractObject" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Element getElementId" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Meta getInstallationId" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Knockout getJsLayout" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Meta getLanguageCode" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Meta getModuleVersion" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product getNostoCategory" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\TaggingTrait getNostoHelperAccount" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Addtocart getSubmitUrl" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Knockout getTemplate" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product hasMultipleCurrencies" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Variation hasMultipleCurrencies" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Stub isRecoAutoloadDisabled" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Knockout" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Meta" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Order __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Order" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\PageType" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Block\Product __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Product" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Search" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Stub" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\TaggingTrait" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Block\Variation" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Controller\Export" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Order __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Product __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Controller\Export\Base" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Order buildExportCollection" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Product buildExportCollection" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Order buildSingleExportCollection" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Product buildSingleExportCollection" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Base execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Product export" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Controller\Export\Order" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Controller\Export\Product" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Frontend\Cart __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\ProductData __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\CoreData __construct" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Adminhtml" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Cart" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Customer" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Order" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Product" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Rates" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Observer\Settings" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Adminhtml\Config __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Cart\Add __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Customer\Save __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Customer\UpdateMarketingPermission __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Order\Save __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Product\Base __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Rates\Update __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Settings\Update __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Cart\Add" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Product\Base" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Adminhtml\Config" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Adminhtml\Config execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Cart\Add execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Customer\Save execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Customer\UpdateMarketingPermission execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Order\Save execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Product\Base execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Rates\Update execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Settings\Update execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Observer\Product\Review extractProduct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Product\Review" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Customer\Save" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Order\Save" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Rates\Update" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Settings\Update" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Observer\Customer\UpdateMarketingPermission" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Plugin" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Plugin\Sales" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Setup" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Test\_util" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Tagging\Test\Integration" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\ProductInvalidate __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\Sales\OrderRepository __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\UpgradeData __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\Sales\OrderRepository afterSave" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\ProductData aroundSave" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Plugin\ProductInvalidate aroundSave" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Test\_util\BuilderInterface build" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Test\_util\BuilderInterface" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Test\Integration\FixturesTrait fixtureLoadSimpleProduct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Test\Integration\FixturesTrait" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\InstallData install" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\InstallSchema install" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\InstallData" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\InstallSchema" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Plugin\Sales\OrderRepository" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Plugin\ProductData" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Plugin\ProductInvalidate" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\UpgradeData upgrade" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Setup\UpgradeSchema upgrade" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\UpgradeData" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\UpgradeSchema" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Model\Service\Stock\StockService __construct" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider" />
+      <entry_point TYPE="phpNamespace" FQNAME="\Nosto\Msi\Model\Service\Stock\Source" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService __construct" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Controller\Frontend\Cart" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Model\Service\Stock\StockService" />
+      <entry_point TYPE="phpClass" FQNAME="\Nosto\Tagging\Setup\CoreData" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Tagging\Controller\Export\Base __construct" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService execute" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getAvailableQuantity" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getInStockProductIds" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider getQuantitiesByIds" />
+      <entry_point TYPE="phpMethod" FQNAME="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider isInStock" />
+    </entry_point>
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" />
+    <pattern value="\Nosto\Tagging\Controller\Frontend\Cart" />
+    <pattern value="\Nosto\Tagging\Model\Service\Stock\StockService" />
+    <pattern value="\Nosto\Tagging\Setup\CoreData" />
+    <pattern value="\Nosto\Tagging\Controller\Export\Base" member="__construct" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStockSourcesService" member="execute" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Source\CachingStocksService" member="execute" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getAvailableQuantity" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getInStockProductIds" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="getQuantitiesByIds" />
+    <pattern value="\Nosto\Msi\Model\Service\Stock\Provider\DefaultMsiStockProvider" member="isInStock" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

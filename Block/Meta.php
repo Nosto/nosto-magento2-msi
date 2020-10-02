@@ -34,40 +34,37 @@
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Source;
+namespace Nosto\Msi\Block;
 
-use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
+use Magento\Framework\View\Element\Template;
+use Magento\Framework\View\Element\Template\Context;
+use Nosto\Msi\Helper\Data as NostoHelperData;
 
-/** @noinspection PhpUnused */
-class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
+class Meta extends Template
 {
-
-    private $cachedStockSources = [];
-
-    /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSources;
+    /** @var NostoHelperData */
+    private $nostoHelperData;
 
     /**
-     * CachingStockSourcesService constructor.
-     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-     * @noinspection PhpUnused
+     * Meta constructor.
+     * @param NostoHelperData $nostoHelperData
      */
     public function __construct(
-        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
+        Context $context,
+        NostoHelperData $nostoHelperData
     ) {
-        $this->stockSources = $stockSources;
+        parent::__construct($context);
+        $this->nostoHelperData = $nostoHelperData;
     }
 
     /**
-     * @inheritDoc
-     * @noinspection PhpUnused
+     * Returns the module version number.
+     *
+     * @return string the module version number.
      */
-    public function execute(int $stockId): array
+    public function getModuleVersion()
     {
-        if (isset($this->cachedStockSources[$stockId])) {
-            return $this->cachedStockSources[$stockId];
-        }
-        $this->cachedStockSources[$stockId] = $this->stockSources->execute($stockId);
-        return $this->cachedStockSources[$stockId];
+        return $this->nostoHelperData->getModuleVersion();
     }
 }
+

@@ -34,40 +34,39 @@
  *
  */
 
-namespace Nosto\Msi\Model\Service\Stock\Source;
+namespace Nosto\Msi\Helper;
 
-use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface;
+use Magento\Framework\Module\ModuleListInterface;
 
-/** @noinspection PhpUnused */
-class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
+class Data
 {
+    const MODULE_NAME = 'Nosto_Msi';
 
-    private $cachedStockSources = [];
-
-    /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSources;
+    /** @var ModuleListInterface */
+    private $moduleList;
 
     /**
-     * CachingStockSourcesService constructor.
-     * @param GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-     * @noinspection PhpUnused
+     * Data constructor.
+     * @param ModuleListInterface $moduleList
      */
-    public function __construct(
-        GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources
-    ) {
-        $this->stockSources = $stockSources;
+    public function __construct(ModuleListInterface $moduleList)
+    {
+        $this->moduleList = $moduleList;
     }
 
+
     /**
-     * @inheritDoc
-     * @noinspection PhpUnused
+     * Returns the module version number of the Nosto CMP module.
+     *
+     * @return string the module's version
      */
-    public function execute(int $stockId): array
+    public function getModuleVersion()
     {
-        if (isset($this->cachedStockSources[$stockId])) {
-            return $this->cachedStockSources[$stockId];
+        $nostoMsiModule = $this->moduleList->getOne(self::MODULE_NAME);
+        if (!empty($nostoMsiModule['setup_version'])) {
+            return $nostoMsiModule['setup_version'];
         }
-        $this->cachedStockSources[$stockId] = $this->stockSources->execute($stockId);
-        return $this->cachedStockSources[$stockId];
+        return 'unknown';
     }
 }
+
