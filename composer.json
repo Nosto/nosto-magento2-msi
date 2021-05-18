@@ -2,7 +2,7 @@
   "name": "nosto/module-nosto-msi",
   "description": "Compatibility plugin between Nosto and Magento multi-source inventory",
   "type": "magento2-module",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "require-dev": {
     "phing/phing": "2.*",
     "magento-ecg/coding-standard": "3.*",
