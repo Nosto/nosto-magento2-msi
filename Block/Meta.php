@@ -51,6 +51,7 @@ class Meta extends Template
 
     /**
      * Meta constructor.
+     * @param Context $context
      * @param NostoHelperData $nostoHelperData
      */
     public function __construct(

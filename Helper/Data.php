@@ -49,6 +49,7 @@ class Data extends AbstractHelper
 
     /**
      * Data constructor.
+     * @param Context $context
      * @param ModuleListInterface $moduleList
      */
     public function __construct(Context $context, ModuleListInterface $moduleList)
