@@ -36,6 +36,7 @@
 
 namespace Nosto\Msi\Block;
 
+use Magento\Framework\Escaper;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Nosto\Msi\Helper\Data as NostoHelperData;
@@ -44,6 +45,9 @@ class Meta extends Template
 {
     /** @var NostoHelperData */
     private $nostoHelperData;
+
+    /** @var Escaper */
+    public $escaper;
 
     /**
      * Meta constructor.
@@ -55,6 +59,7 @@ class Meta extends Template
     ) {
         parent::__construct($context);
         $this->nostoHelperData = $nostoHelperData;
+        $this->escaper = $context->getEscaper();
     }
 
     /**
@@ -67,4 +72,3 @@ class Meta extends Template
         return $this->nostoHelperData->getModuleVersion();
     }
 }
-

@@ -39,4 +39,4 @@ use Nosto\Msi\Block\Meta;
 /**  @var Meta $block */
 ?>
 <!-- Nosto Msi Meta Tags -->
-<meta name="nosto-msi-version" content="<?= $block->escapeHtml($block->getModuleVersion()); ?>">
+<meta name="nosto-msi-version" content="<?= $block->escaper->escapeHtml($block->getModuleVersion()); ?>">
