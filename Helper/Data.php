@@ -36,9 +36,11 @@
 
 namespace Nosto\Msi\Helper;
 
+use Magento\Framework\App\Helper\AbstractHelper;
+use Magento\Framework\App\Helper\Context;
 use Magento\Framework\Module\ModuleListInterface;
 
-class Data
+class Data extends AbstractHelper
 {
     const MODULE_NAME = 'Nosto_Msi';
 
@@ -49,8 +51,9 @@ class Data
      * Data constructor.
      * @param ModuleListInterface $moduleList
      */
-    public function __construct(ModuleListInterface $moduleList)
+    public function __construct(Context $context, ModuleListInterface $moduleList)
     {
+        parent::__construct($context);
         $this->moduleList = $moduleList;
     }
 
