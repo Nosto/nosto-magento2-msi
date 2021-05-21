@@ -36,6 +36,7 @@
 
 namespace Nosto\Msi\Model\Service\Stock\Provider;
 
+use Exception;
 use Magento\Catalog\Model\Product;
 use Magento\Inventory\Model\ResourceModel\SourceItem\Collection;
 use Magento\Inventory\Model\ResourceModel\SourceItem\CollectionFactory as InventorySourceItemCollectionFactory;
@@ -199,17 +200,25 @@ class DefaultMsiStockProvider implements StockProviderInterface
             if ($stockId) {
                 return (int)$this->salableQty->execute($product->getSku(), $stockId);
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->logger->exception($e);
         }
         return 0;
     }
 
+    /**
+     * @param Website $website
+     * @return StockInterface
+     */
     public function getStockByWebsite(Website $website): StockInterface
     {
         return $this->stockResolver->execute($website->getId());
     }
 
+    /**
+     * @param Website $website
+     * @return SourceInterface[]|null
+     */
     public function getStockSourcesByWebsite(Website $website)
     {
         $stockId = $this->getStockByWebsite($website)->getStockId();
@@ -217,7 +226,7 @@ class DefaultMsiStockProvider implements StockProviderInterface
             if ($stockId) {
                 return $this->stockSourcesResolver->execute($stockId);
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             $this->logger->exception($e);
         }
         return null;
