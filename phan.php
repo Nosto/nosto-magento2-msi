@@ -63,7 +63,7 @@ return [
         'magento'
     ],
     'suppress_issue_types' => [
-        'PhanParamSignatureMismatch',
+        'PhanParamSignatureMismatch'
     ],
     "color_issue_messages_if_supported" => true,
     'plugins' => [
