@@ -11,11 +11,11 @@
     "mridang/pmd-annotations": "^0.0.2",
     "staabm/annotate-pull-request-from-checkstyle": "^1.1",
     "magento/magento-coding-standard": "^5.0",
-    "phan/phan": "2.6",
+    "phan/phan": "5.3.0",
     "squizlabs/php_codesniffer": "^3.5",
     "phpmd/phpmd": "^2.6",
     "sebastian/phpcpd": "4.1.0",
-    "drenso/phan-extensions": "^2.5",
+    "drenso/phan-extensions": "3.5.1",
     "magento/inventory-composer-metapackage": "^1.1.0"
   },
   "license": [
@@ -31,7 +31,8 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://repo.magento.com/"
+      "url": "https://repo.magento.com/",
+      "exclude": ["nosto/*"]
     }
   ],
   "autoload": {
