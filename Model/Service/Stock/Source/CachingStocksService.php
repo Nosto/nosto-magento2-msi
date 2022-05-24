@@ -46,7 +46,7 @@ class CachingStocksService implements StockByWebsiteIdResolverInterface
     private array $stocks = [];
 
     /** @var StockByWebsiteIdResolverInterface  */
-    private StockByWebsiteIdResolverInterface$stockByWebsiteIdResolver;
+    private StockByWebsiteIdResolverInterface $stockByWebsiteIdResolver;
 
     /**
      * CachingStocksService constructor.
