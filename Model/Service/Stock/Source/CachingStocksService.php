@@ -42,9 +42,11 @@ use Magento\InventorySalesApi\Model\StockByWebsiteIdResolverInterface;
 /** @noinspection PhpUnused */
 class CachingStocksService implements StockByWebsiteIdResolverInterface
 {
+    /** @var array  */
+    private array $stocks = [];
 
-    private $stocks = [];
-    private $stockByWebsiteIdResolver;
+    /** @var StockByWebsiteIdResolverInterface  */
+    private StockByWebsiteIdResolverInterface$stockByWebsiteIdResolver;
 
     /**
      * CachingStocksService constructor.
