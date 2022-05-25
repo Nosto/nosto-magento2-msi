@@ -23,7 +23,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "nosto/module-nostotagging": "^6.0",
+    "nosto/module-nostotagging": "^6.0.0",
     "magento/module-inventory": "^1.0.0",
     "magento/module-inventory-sales-api": "^1.0.0",
     "php": ">=7.4.0"
@@ -32,8 +32,7 @@
     {
       "type": "composer",
       "url": "https://repo.magento.com/",
-      "exclude": ["nosto/*"],
-      "canonical": false
+      "exclude": ["nosto/*"]
     }
   ],
   "autoload": {
