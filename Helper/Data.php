@@ -45,7 +45,7 @@ class Data extends AbstractHelper
     const MODULE_NAME = 'Nosto_Msi';
 
     /** @var ModuleListInterface */
-    private $moduleList;
+    private ModuleListInterface $moduleList;
 
     /**
      * Data constructor.

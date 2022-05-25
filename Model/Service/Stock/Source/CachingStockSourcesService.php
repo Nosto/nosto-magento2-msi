@@ -41,11 +41,11 @@ use Magento\InventoryApi\Api\GetSourcesAssignedToStockOrderedByPriorityInterface
 /** @noinspection PhpUnused */
 class CachingStockSourcesService implements GetSourcesAssignedToStockOrderedByPriorityInterface
 {
-
-    private $cachedStockSources = [];
+    /** @var array  */
+    private array $cachedStockSources = [];
 
     /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSources;
+    private GetSourcesAssignedToStockOrderedByPriorityInterface $stockSources;
 
     /**
      * CachingStockSourcesService constructor.

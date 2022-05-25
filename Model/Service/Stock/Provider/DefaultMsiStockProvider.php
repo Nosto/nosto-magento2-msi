@@ -57,25 +57,25 @@ use Nosto\Tagging\Model\Service\Stock\Provider\StockProviderInterface;
 class DefaultMsiStockProvider implements StockProviderInterface
 {
     /** @var GetProductSalableQtyInterface */
-    private $salableQty;
+    private GetProductSalableQtyInterface $salableQty;
 
     /** @var StockByWebsiteIdResolverInterface */
-    private $stockResolver;
+    private StockByWebsiteIdResolverInterface $stockResolver;
 
     /** @var InventorySourceItemCollectionFactory */
-    private $inventorySourceItemCollectionFactory;
+    private InventorySourceItemCollectionFactory $inventorySourceItemCollectionFactory;
 
     /** @var ProductCollectionFactory */
-    private $productCollectionFactory;
+    private ProductCollectionFactory $productCollectionFactory;
 
     /** @var GetSourcesAssignedToStockOrderedByPriorityInterface */
-    private $stockSourcesResolver;
+    private GetSourcesAssignedToStockOrderedByPriorityInterface $stockSourcesResolver;
 
     /** @var Logger */
-    private $logger;
+    private Logger $logger;
 
     /** @var IsProductSalableInterface */
-    private $isProductSalable;
+    private IsProductSalableInterface $isProductSalable;
 
     /**
      * @param GetProductSalableQtyInterface $salableQty

@@ -15,7 +15,7 @@ jobs:
     - name: Set up PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: '7.3'
+        php-version: '7.4'
         tools: composer:v2, pecl
         coverage: none
         extensions: ast, bcmath, gd, pdo_mysql, zip, soap
@@ -45,11 +45,11 @@ jobs:
     - name: Install Magento
       id: install-magento
       run: |
-        composer create-project magento/community-edition=2.4.2 magento --no-dev
+        composer create-project magento/community-edition=2.4.4 magento --no-dev
         cd magento
         composer config minimum-stability dev
         composer config prefer-stable true
-        composer config repositories.0 composer https://repo.magento.com
+        composer config repositories.0 '{"type": "composer", "url": "https://repo.magento.com", "exclude": ["nosto/*"]}'
         composer config http-basic.repo.magento.com "$REPO_USR" "$REPO_PSW"
         composer require --no-update magento/inventory-composer-metapackage
         composer require --no-update nosto/module-nosto-msi:dev-${GITHUB_REF#refs/heads/}#${GITHUB_SHA}
