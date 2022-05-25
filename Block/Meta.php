@@ -44,10 +44,10 @@ use Nosto\Msi\Helper\Data as NostoHelperData;
 class Meta extends Template
 {
     /** @var NostoHelperData */
-    private $nostoHelperData;
+    private NostoHelperData $nostoHelperData;
 
     /** @var Escaper */
-    public $escaper;
+    public Escaper $escaper;
 
     /**
      * Meta constructor.

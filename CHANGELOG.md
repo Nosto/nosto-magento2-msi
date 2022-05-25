@@ -1,5 +1,8 @@
 All notable changes to this project will be documented in this file. This project adheres to Semantic Versioning.
 
+### 3.0.0
+* Add support for PHP 8.1 for compatibility with Nosto_Tagging module version 6
+
 ### 2.0.1
 * Tag module version to the source codes
 * Add inspections to the module repository
