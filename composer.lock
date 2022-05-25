@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "abf5efc1b3a11a41af10b0d2a86a6ee5",
+    "content-hash": "b33e68b7393e8419e475bd347c4a5307",
     "packages": [
         {
             "name": "brick/math",
@@ -283,12 +283,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "44a52e4157eb3a8c529204d6799ae7e0909d4de0"
+                "reference": "10d3895f187b0be4346781eac5788e15753b2d7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/44a52e4157eb3a8c529204d6799ae7e0909d4de0",
-                "reference": "44a52e4157eb3a8c529204d6799ae7e0909d4de0",
+                "url": "https://api.github.com/repos/composer/composer/zipball/10d3895f187b0be4346781eac5788e15753b2d7c",
+                "reference": "10d3895f187b0be4346781eac5788e15753b2d7c",
                 "shasum": ""
             },
             "require": {
@@ -374,7 +374,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T12:32:18+00:00"
+            "time": "2022-05-24T20:14:17+00:00"
         },
         {
             "name": "composer/metadata-minifier",
@@ -5407,7 +5407,7 @@
         },
         {
             "name": "nosto/module-nostotagging",
-            "version": "dev-develop",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-magento2.git",
@@ -5457,7 +5457,6 @@
                 "magento/product-community-edition": "2.*",
                 "yotpo/module-review": "^2.9"
             },
-            "default-branch": true,
             "type": "magento2-module",
             "autoload": {
                 "files": [
