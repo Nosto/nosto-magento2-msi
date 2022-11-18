@@ -1,5 +1,8 @@
 All notable changes to this project will be documented in this file. This project adheres to Semantic Versioning.
 
+### 3.1.0
+* Update nosto/module-nostotagging package to ^7.0.0
+
 ### 3.0.0
 * Add support for PHP 8.1 for compatibility with Nosto_Tagging module version 6
 
