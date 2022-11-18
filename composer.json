@@ -2,7 +2,7 @@
   "name": "nosto/module-nosto-msi",
   "description": "Compatibility plugin between Nosto and Magento multi-source inventory",
   "type": "magento2-module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "require-dev": {
     "phing/phing": "2.*",
     "magento-ecg/coding-standard": "3.*",
@@ -23,7 +23,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "nosto/module-nostotagging": "^6.0.0",
+    "nosto/module-nostotagging": "^7.0.0",
     "magento/module-inventory": "^1.0.0",
     "magento/module-inventory-sales-api": "^1.0.0",
     "php": ">=7.4.0"
