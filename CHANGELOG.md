@@ -1,6 +1,6 @@
 All notable changes to this project will be documented in this file. This project adheres to Semantic Versioning.
 
-### 3.0.1
+### 3.1.0
 * Update nosto/module-nostotagging package to ^7.0.0
 
 ### 3.0.0
