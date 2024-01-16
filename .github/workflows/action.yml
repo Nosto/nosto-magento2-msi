@@ -146,7 +146,7 @@ jobs:
         composer require --no-update nosto/module-nostotagging:@stable
         composer require --no-update nosto/module-nostotagging-cmp:@stable
         composer require --no-update nosto/module-nosto-itp:@stable
-        composer install --prefer-dist --no-progress --no-suggest
+        composer install --prefer-dist --no-progress
     ############################################################################
 
     - name: Build archive using composer
