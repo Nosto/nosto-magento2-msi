@@ -120,7 +120,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '7.4'
-        tools: composer:v2, pecl
+        tools: composer:v2.1.14, pecl
         extensions: ast, bcmath, gd
         coverage: none
 
@@ -146,7 +146,7 @@ jobs:
         composer require --no-update nosto/module-nostotagging:@stable
         composer require --no-update nosto/module-nostotagging-cmp:@stable
         composer require --no-update nosto/module-nosto-itp:@stable
-        composer install --prefer-dist --no-progress --no-suggest
+        composer install --prefer-dist --no-progress
     ############################################################################
 
     - name: Build archive using composer

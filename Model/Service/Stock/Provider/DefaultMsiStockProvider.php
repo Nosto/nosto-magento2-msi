@@ -127,21 +127,15 @@ class DefaultMsiStockProvider implements StockProviderInterface
      */
     public function getQuantitiesByIds(array $productIds, Website $website): array
     {
+        $stock = $this->getStockByWebsite($website);
+        $stockId = (int)$stock->getStockId();
         $quantities = [];
         $skuStrings = $this->getProductIdSkuMap($productIds, $website);
-        $inventoryItems = $this->getInventoryItemsByProductIds($productIds, $website);
-        if ($inventoryItems == null || empty($skuStrings)) {
-            return [];
-        }
-        /** @var SourceItemInterface $inventoryItem */
-        foreach ($inventoryItems as $inventoryItem) {
-            $productId = array_search($inventoryItem->getSku(), $skuStrings, true);
-            if ($productId !== false) {
-                if (!isset($quantities[$productId])) {
-                    $quantities[$productId] = 0;
-                }
-                $quantities[$productId] += $inventoryItem->getQuantity();
+        foreach ($skuStrings as $productId => $skuString) {
+            if (!isset($quantities[$productId])) {
+                $quantities[$productId] = 0;
             }
+            $quantities[$productId] += $this->salableQty->execute($skuString, $stockId);
         }
         return $quantities;
     }
