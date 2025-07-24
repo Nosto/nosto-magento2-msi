@@ -67,10 +67,11 @@ jobs:
 
     - name: Run Qodana via Docker
       run: |
-        docker run --rm -v "$PWD:/data" jetbrains/qodana-php-community \
-        --results-dir /data/qodana-report \
-        --project-dir /data \
-        --show-report
+        docker run --rm \
+          -v "${{ github.workspace }}:/data" \
+          jetbrains/qodana-php-community \
+          --results-dir /data/qodana-report \
+          --project-dir /data
 
     - name: Upload Qodana Report
       if: always()
