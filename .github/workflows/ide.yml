@@ -65,18 +65,16 @@ jobs:
         REPO_USR: ${{ secrets.REPO_USR }}
         REPO_PSW: ${{ secrets.REPO_PSW }}
 
-    - name: Run PHPStorm
-      uses: supercid/action-phpstorm@master
+    - name: Run Qodana (PHPStorm Engine)
+      uses: JetBrains/qodana-action@v2023.3
       with:
-        target: .
-        profile: ./.idea/inspectionProfiles/CI.xml
-        output: ./output
-        verbosity: v2
-        scope: Inspection
+        project-dir: .
+        results-dir: qodana-report
+        ide: PHPSTORM
 
     - name: Archive inspection results
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: inspection-results
-        path: output
+        path: qodana-report
