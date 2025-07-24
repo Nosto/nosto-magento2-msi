@@ -65,12 +65,18 @@ jobs:
         REPO_USR: ${{ secrets.REPO_USR }}
         REPO_PSW: ${{ secrets.REPO_PSW }}
 
-    - name: Run Qodana
-      uses: JetBrains/qodana-action@v2023.3
+    - name: Run PHPStorm Inspection
+      uses: ./.github/actions/phpstorm-inspect
+      with:
+        target: .
+        profile: ./.idea/inspectionProfiles/CI.xml
+        output: ./output
+        verbosity: v2
+        scope: Inspection
 
-    - name: Upload Qodana Report
+    - name: Archive inspection results
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: qodana-report
-        path: qodana-report
+        name: inspection-results
+        path: output
