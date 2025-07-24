@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v4
 
     ############################################################################
     - name: Set up PHP
@@ -65,14 +65,16 @@ jobs:
         REPO_USR: ${{ secrets.REPO_USR }}
         REPO_PSW: ${{ secrets.REPO_PSW }}
 
-    - name: Run Qodana (PHPStorm Engine)
-      uses: JetBrains/qodana-action@v2023.3
-      with:
-        results-dir: qodana-report
+    - name: Run Qodana via Docker
+      run: |
+        docker run --rm -v "$PWD:/data" jetbrains/qodana-php-community \
+        --results-dir /data/qodana-report \
+        --project-dir /data \
+        --show-report
 
-    - name: Archive inspection results
+    - name: Upload Qodana Report
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: inspection-results
+        name: qodana-report
         path: qodana-report
