@@ -68,9 +68,7 @@ jobs:
     - name: Run Qodana (PHPStorm Engine)
       uses: JetBrains/qodana-action@v2023.3
       with:
-        project-dir: .
         results-dir: qodana-report
-        ide: PHPSTORM
 
     - name: Archive inspection results
       if: always()
