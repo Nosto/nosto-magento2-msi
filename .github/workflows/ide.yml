@@ -67,9 +67,6 @@ jobs:
 
     - name: Run Qodana
       uses: JetBrains/qodana-action@v2023.3
-      with:
-        linter: jetbrains/qodana-php-community
-        project-dir: .
 
     - name: Upload Qodana Report
       if: always()
