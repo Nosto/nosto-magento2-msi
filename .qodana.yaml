@@ -1,12 +1,10 @@
-version: 1.0
-ide: PHPSTORM
-profile:
-  name: CI
-
-args:
-  - "--project-dir=/data"
-  - "--include-blocklist=**/*.php"
-
-exclude:
-  - vendor/
-  - .idea/
+version: "1.0"
+linter: jetbrains/qodana-php-community
+include:
+  - Block
+  - etc
+  - Helper
+  - Model
+  - view
+  - phan.php
+  - registration.php

@@ -65,13 +65,8 @@ jobs:
         REPO_USR: ${{ secrets.REPO_USR }}
         REPO_PSW: ${{ secrets.REPO_PSW }}
 
-    - name: Run Qodana via Docker
-      run: |
-        docker run --rm \
-          -v "${{ github.workspace }}:/data" \
-          jetbrains/qodana-php-community \
-          --results-dir /data/qodana-report \
-          --project-dir /data
+    - name: Run Qodana
+      uses: JetBrains/qodana-action@v2023.3
 
     - name: Upload Qodana Report
       if: always()
