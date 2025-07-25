@@ -62,7 +62,10 @@
     ]
   },
   "config": {
-    "process-timeout": 3600
+    "process-timeout": 3600,
+    "allow-plugins": {
+      "magento/inventory-composer-installer": false
+    }
   },
   "scripts": {
     "di:compile": "./compile.sh",
