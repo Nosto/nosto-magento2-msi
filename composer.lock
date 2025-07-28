@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "189bbda7fd61dc526cb86b1281e3a463",
+    "content-hash": "571c2823528cecf79da599e605c00ece",
     "packages": [
         {
             "name": "brick/math",
@@ -5425,22 +5425,23 @@
         },
         {
             "name": "nosto/module-nostotagging",
-            "version": "7.3.1",
+            "version": "8.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-magento2.git",
-                "reference": "10d9137b8f1d3d34c0081b288c42e143f0c4b5e6"
+                "reference": "5d749b1c8c2af0a4463c8c81fb85beea9aa7a21d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/10d9137b8f1d3d34c0081b288c42e143f0c4b5e6",
-                "reference": "10d9137b8f1d3d34c0081b288c42e143f0c4b5e6",
+                "url": "https://api.github.com/repos/Nosto/nosto-magento2/zipball/5d749b1c8c2af0a4463c8c81fb85beea9aa7a21d",
+                "reference": "5d749b1c8c2af0a4463c8c81fb85beea9aa7a21d",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+                "laminas/laminas-uri": "*",
                 "magento/framework": ">=101.0.6|~104.0",
-                "nosto/php-sdk": "^7.1",
+                "nosto/php-sdk": "^7.6.4",
                 "php": ">=7.4.0"
             },
             "require-dev": {
@@ -5468,11 +5469,11 @@
                 "phpunit/phpunit": "~9.5.18",
                 "sebastian/phpcpd": "*",
                 "staabm/annotate-pull-request-from-checkstyle": "^1.1",
-                "yotpo/module-review": "^2.9"
+                "yotpo/module-yotpo-combined": "^4.1"
             },
             "suggest": {
                 "magento/product-community-edition": "2.*",
-                "yotpo/module-review": "^2.9"
+                "yotpo/module-yotpo-combined": "^4.1"
             },
             "type": "magento2-module",
             "autoload": {
@@ -5490,29 +5491,29 @@
             "description": "Increase your conversion rate and average order value by delivering your customers personalized product recommendations throughout their shopping journey.",
             "support": {
                 "issues": "https://github.com/Nosto/nosto-magento2/issues",
-                "source": "https://github.com/Nosto/nosto-magento2/tree/7.3.1"
+                "source": "https://github.com/Nosto/nosto-magento2/tree/8.0.7"
             },
-            "time": "2023-09-25T12:32:49+00:00"
+            "time": "2025-07-03T10:57:40+00:00"
         },
         {
             "name": "nosto/php-sdk",
-            "version": "7.2.0",
+            "version": "7.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Nosto/nosto-php-sdk.git",
-                "reference": "efe6218e43bf08b41ca9500b9b1434d1de25e564"
+                "reference": "1fbd114f3d56aec068543a4a7f652ce90f427f5a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Nosto/nosto-php-sdk/zipball/efe6218e43bf08b41ca9500b9b1434d1de25e564",
-                "reference": "efe6218e43bf08b41ca9500b9b1434d1de25e564",
+                "url": "https://api.github.com/repos/Nosto/nosto-php-sdk/zipball/1fbd114f3d56aec068543a4a7f652ce90f427f5a",
+                "reference": "1fbd114f3d56aec068543a4a7f652ce90f427f5a",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-json": "*",
                 "php": ">=5.5",
-                "phpseclib/phpseclib": "2.0.* || ~3.0.9",
+                "phpseclib/phpseclib": "3.0.*",
                 "vlucas/phpdotenv": "^2.4 || ^3.6"
             },
             "require-dev": {
@@ -5546,9 +5547,9 @@
             "description": "PHP SDK for developing Nosto modules for e-commerce platforms",
             "support": {
                 "issues": "https://github.com/Nosto/nosto-php-sdk/issues",
-                "source": "https://github.com/Nosto/nosto-php-sdk/tree/7.2.0"
+                "source": "https://github.com/Nosto/nosto-php-sdk/tree/7.6.9"
             },
-            "time": "2023-11-23T15:12:57+00:00"
+            "time": "2025-06-27T12:32:21+00:00"
         },
         {
             "name": "paragonie/constant_time_encoding",
@@ -12438,12 +12439,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

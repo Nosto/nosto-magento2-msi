@@ -1,5 +1,8 @@
 All notable changes to this project will be documented in this file. This project adheres to Semantic Versioning.
 
+### 3.1.2
+* Add support for nosto/module-nostotagging version ^8.0.0
+
 ### 3.1.1
 * Take into account reservations when calculating the stock level for a product
 
